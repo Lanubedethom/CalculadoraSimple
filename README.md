@@ -1,4 +1,5 @@
 ## Calculadora (proyecto)
+AUTOR: CALLAPIÑA CASTILLA CIRO GABRIEL
 
 Resumen
 -------
