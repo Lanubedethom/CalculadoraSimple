@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+## Calculadora (proyecto)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Resumen
+-------
+Esta es una app Expo + React Native con TypeScript que incluye una pantalla de "Saludo" y una pantalla de "Calculadora".
 
-## Get started
+Características principales
+- Calculadora editable: puedes escribir o editar la fórmula directamente en pantalla (soporta paréntesis).
+- Botones para insertar dígitos y operadores (+, -, ×, ÷, .).
+- Botón de borrado `⌫` que elimina un carácter a la vez desde la derecha.
+- Las fuentes personalizadas (`Pacifico-Regular` y `Inter18Medium`) se cargan antes de renderizar la app.
 
-1. Install dependencies
+Archivos relevantes
+- `components/Calculator.tsx` — UI y lógica de la calculadora (evaluación, botones, backspace).
+- `app/(tabs)/index.tsx` — pantalla "Saludo".
+- `app/(tabs)/about.tsx` — pantalla "Calculadora" (usa el componente `Calculator`).
+- `app/_layout.tsx` — carga las fuentes desde `assets/fonts/`.
 
-   ```bash
-   npm install
-   ```
+Requisitos
+- Node.js (16+ recomendado)
+- npm o yarn
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Instalación
 
 ```bash
-npm run reset-project
+npm install
+# o con yarn
+# yarn
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Ejecutar en desarrollo
 
-## Learn more
+1. Iniciar Metro / Dev tools
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. Desde la interfaz de Expo puedes:
+- Abrir en Expo Go (teléfono físico) escaneando el QR.
+- Abrir en emulador Android o iOS.
+- Ejecutar en web:
 
-## Join the community
+```bash
+npx expo start --web
+```
 
-Join our community of developers creating universal apps.
+Comandos rápidos (desde `package.json`)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm run start
+npm run android
+npm run ios
+npm run web
+```
+
+Notas y troubleshooting
+- Si las fuentes no se muestran correctamente al inicio, reinicia Metro con cache limpio:
+
+```bash
+npx expo start -c
+```
+
+- La fórmula se evalúa internamente reemplazando `×` por `*` y `÷` por `/` antes de ejecutar la evaluación. Si la expresión no es válida, verás una alerta "Fórmula inválida".
+- Para mayor seguridad y robustez puedes reemplazar la evaluación con un parser matemático en lugar de `eval`.
+
+¿Quieres que añada:
+- instrucciones para crear una build nativa (Android/iOS)?
+- tests unitarios para la lógica de la calculadora?
+
