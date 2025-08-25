@@ -1,0 +1,81 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example
+
+# Editor/IDE
+.vscode/
+.idea/
+*.iml
+
+# Lock files (opcional, si prefieres no commitearlos)
+package-lock.json
+npm-shrinkwrap.json
+
+# Expo shared
+.expo-shared/
+
+# Android
+android/
+android/app/build/
+android/.gradle/
+
+# iOS
+ios/
+ios/Pods/
+ios/build/
+*.xcworkspace
+
+# Gradle
+.gradle/
+
+# Logs
+*.log
+logs/
+
+# Temp
+*.tmp
+*.temp
+
+# Coverage
+coverage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+
